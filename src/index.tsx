@@ -1,43 +1,56 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom/client';
-import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as React from "react";
+import { render } from "react-dom";
+import "./index.css";
+import App from "./App";
 
-const rootElement = document.getElementById('root');
-const root = ReactDOM.createRoot(rootElement!);
+const getTableHeaders = (table: HTMLTableElement) => {
+  const headers: string[] = [];
+  const headerElements = table.querySelectorAll("th");
+  headerElements.forEach((headerElement) => {
+    headers.push(headerElement.textContent as string);
+  });
+  return headers;
+};
 
-// All `Portal`-related components need to have the the main app wrapper element as a container
-// so that the are in the subtree under the element used in the `important` option of the Tailwind's config.
-const theme = createTheme({
-  components: {
-    MuiPopover: {
-      defaultProps: {
-        container: rootElement,
-      },
-    },
-    MuiPopper: {
-      defaultProps: {
-        container: rootElement,
-      },
-    },
-  },
-});
+const getTableData = (table: HTMLTableElement) => {
+  const data: string[][] = [];
+  const rowElements = table.querySelectorAll("tbody tr");
+  rowElements.forEach((rowElement) => {
+    const row: string[] = [];
+    const cellElements = rowElement.querySelectorAll("td");
+    cellElements.forEach((cellElement) => {
+      row.push(cellElement.textContent as string);
+    });
+    data.push(row);
+  });
+  return data;
+};
 
-root.render(
-  <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
-    </StyledEngineProvider>
-  </React.StrictMode>,
-);
+const renderTables = () => {
+  try {
+    // find all tables in the document
+    const tables = document.querySelectorAll("table");
+    // render the App component for each table
+    tables.forEach((table) => {
+      const headers = getTableHeaders(table);
+      const data = getTableData(table);
+      if (!table.id) {
+        table.id = `table-${Math.random().toString(36).substr(2, 9)}`;
+      }
+      // Create an adjecent element to table to render the App component
+      const div = document.createElement("div");
+      div.id = `div-${table.id}`;
+      table.insertAdjacentElement("afterend", div);
+      // Render the App component
+      const querySelector = `#${div.id}`;
+      console.log(`Rendering App for table with id: ${querySelector}`);
+      render(<App headers={headers} data={data} />, div);
+      table.hidden = true;
+    });
+  } catch (error) {
+    console.error("Error rendering tables", error);
+  }
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// @ts-ignore
+window.RenderTables = renderTables;

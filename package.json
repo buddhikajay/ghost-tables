@@ -15,6 +15,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "ag-grid-react": "^31.2.0",
     "autoprefixer": "latest",
     "postcss": "latest",
     "react": "latest",

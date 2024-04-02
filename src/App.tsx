@@ -1,34 +1,15 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import DataTable from './features/DataTable';
-import Grid from './features/ReactGrid';
+import * as React from "react";
+import Grid from "./ReactGrid";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
+interface AppProps {
+  headers: string[];
+  data: string[][];
 }
-
-export default function App() {
+export default function App({ headers, data }: AppProps) {
+  // validate the data
   return (
-    <Container maxWidth="xl">
-      <div className="my-4">
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI Create React App example with Tailwind CSS in TypeScript
-        </Typography>
-        {/* <DataTable /> */}
-        <Grid />
-        <Copyright />
-      </div>
-    </Container>
+    <div>
+      <Grid headers={headers} data={data} />
+    </div>
   );
 }
