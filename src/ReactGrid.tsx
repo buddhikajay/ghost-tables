@@ -10,7 +10,7 @@ interface GridProps {
 }
 export const Grid = ({ headers, data }: GridProps) => {
   const colDefs = headers.map((header, index) => {
-    return { headerName: header, field: header, sortable: true, pinned: index === 0};
+    return { headerName: header, field: header, sortable: true, initialWidth: 120,pinned: index === 0};
   }); // map the headers to the column definitions
   const rowData = data.map((row) => {
     return row.reduce((acc: any, cell, index) => {
