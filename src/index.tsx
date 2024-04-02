@@ -45,7 +45,7 @@ const ghostTables = () => {
       const querySelector = `#${div.id}`;
       console.log(`Rendering App for table with id: ${querySelector}`);
       render(<App headers={headers} data={data} />, div);
-      table.hidden = true;
+      table.style.display = 'none';
     });
   } catch (error) {
     console.error("Error rendering tables", error);
