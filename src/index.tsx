@@ -26,7 +26,7 @@ const getTableData = (table: HTMLTableElement) => {
   return data;
 };
 
-const renderTables = () => {
+const ghostTables = () => {
   try {
     // find all tables in the document
     const tables = document.querySelectorAll("table");
@@ -53,4 +53,4 @@ const renderTables = () => {
 };
 
 // @ts-ignore
-window.RenderTables = renderTables;
+window.ghostTables = ghostTables;
