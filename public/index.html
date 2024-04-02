@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>CRA + Material UI + TS + Tailwind CSS</title>
+    <!-- Fonts to support Material Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div>
+      <table id="myTable">
+        <thead>
+        <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Type</th>
+        <th>Capacity (L)</th>
+        <th>Input Power (W)</th>
+        <th>COP</th>
+        <th>Tank Material</th>
+        <th>Tank Recovery² (min)</th>
+        <th>Made In (Tank)</th>
+        <th>Made In (Comp)</th>
+        <th>Product Review Score</th>
+        <th>Warrenty Pump</th>
+        <th>Warranty</th>
+        <th>Refrigerant³</th>
+        <th>Noise Level (dBA)</th>
+        <th>Min Temp</th>
+        <th>Max Temp (C)</th>
+        <th>Approx Install Cost ($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Reclaim</td>
+        <td>Split</td>
+        <td>160/250/315/400</td>
+        <td>1000</td>
+        <td></td>
+        <td>Vitreous enamel / Stainless Steel</td>
+        <td>180</td>
+        <td>Australia</td>
+        <td>Japan</td>
+        <td>4.9</td>
+        <td>7/8</td>
+        <td>10-15</td>
+        <td>CO₂</td>
+        <td>37</td>
+        <td></td>
+        <td></td>
+        <td>6,000</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Apricus</td>
+        <td>Monoblock</td>
+        <td>260</td>
+        <td>665</td>
+        <td></td>
+        <td>Vitreous enamel</td>
+        <td>240</td>
+        <td>China</td>
+        <td>China</td>
+        <td>n/a</td>
+        <td>6</td>
+        <td>6</td>
+        <td>Propane</td>
+        <td>43</td>
+        <td></td>
+        <td></td>
+        <td>4,000</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Sanden</td>
+        <td>Split</td>
+        <td>160/250/300/315</td>
+        <td>940</td>
+        <td></td>
+        <td>Stainless steel</td>
+        <td>240</td>
+        <td>Australia</td>
+        <td>Japan</td>
+        <td>3.8</td>
+        <td>6</td>
+        <td>15</td>
+        <td>CO₂</td>
+        <td>37</td>
+        <td></td>
+        <td></td>
+        <td>6,000</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Thermann</td>
+        <td>Hybrid</td>
+        <td>Monoblock</td>
+        <td>220 / 300</td>
+        <td>640</td>
+        <td>3.95</td>
+        <td>Vitreous enamel</td>
+        <td></td>
+        <td>Australia</td>
+        <td>Japan</td>
+        <td>5 years</td>
+        <td></td>
+        <td></td>
+        <td>R134A</td>
+        <td>45</td>
+        <td>-5</td>
+        <td>42</td>
+        <td>3,000</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>Split</td>
+        <td>Split</td>
+        <td>160/250/315/400</td>
+        <td></td>
+        <td>5.08</td>
+        <td></td>
+        <td></td>
+        <td>Australia</td>
+        <td>Japan</td>
+        <td>2.9</td>
+        <td>6</td>
+        <td>10</td>
+        <td>CO₂</td>
+        <td>37</td>
+        <td>-10</td>
+        <td>45</td>
+        <td>4,500</td>
+        </tr>
+        <tr>
+        <td>Hydrotherm</td>
+        <td>Dynamic X8</td>
+        <td>Monoblock</td>
+        <td>260</td>
+        <td>700 - 900</td>
+        <td></td>
+        <td>Vitreous enamel</td>
+        <td>270</td>
+        <td>China</td>
+        <td>China</td>
+        <td>4.7</td>
+        <td>6</td>
+        <td>6</td>
+        <td>Propane</td>
+        <td>43</td>
+        <td></td>
+        <td></td>
+        <td>3,300</td>
+        </tr>
+        <tr>
+        <td>Aquatech</td>
+        <td>Rapid X6</td>
+        <td>Monoblock</td>
+        <td>210</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>210</td>
+        <td></td>
+        <td></td>
+        <td>4.7</td>
+        <td>5</td>
+        <td>5</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>2,900</td>
+        </tr>
+        <tr>
+        <td>Ecogenica</td>
+        <td>R series</td>
+        <td>Split &amp; Monoblock</td>
+        <td>215/260/290</td>
+        <td>630/750/1020</td>
+        <td></td>
+        <td>Vitreous enamel</td>
+        <td>200</td>
+        <td>China</td>
+        <td></td>
+        <td>4.2</td>
+        <td>5</td>
+        <td>7</td>
+        <td>Propane</td>
+        <td>50</td>
+        <td></td>
+        <td></td>
+        <td>3,000</td>
+        </tr>
+        <tr>
+        <td>Quantum</td>
+        <td></td>
+        <td>Monoblock</td>
+        <td>150/200/270/340</td>
+        <td></td>
+        <td></td>
+        <td>Vitreous enamel</td>
+        <td></td>
+        <td>China</td>
+        <td></td>
+        <td>2</td>
+        <td>5</td>
+        <td>5</td>
+        <td>Propane</td>
+        <td>48</td>
+        <td></td>
+        <td></td>
+        <td>4,000</td>
+        </tr>
+        <tr>
+        <td>Haier</td>
+        <td>Monoblock</td>
+        <td>Monoblock</td>
+        <td>200/250</td>
+        <td>430</td>
+        <td></td>
+        <td>Vitreous Enamel</td>
+        <td>300</td>
+        <td>China</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>Propane</td>
+        <td>43</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>5,000</td>
+        </tr>
+        <tr>
+        <td>Rinnai</td>
+        <td>Enviroflo</td>
+        <td>Monoblock</td>
+        <td>180/215/250/315</td>
+        <td>940</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Australia</td>
+        <td>Australia</td>
+        <td>2.8</td>
+        <td></td>
+        <td>7</td>
+        <td>Propane</td>
+        <td>48</td>
+        <td></td>
+        <td></td>
+        <td>3,200</td>
+        </tr>
+        <tr>
+        <td>Emerald</td>
+        <td></td>
+        <td>Monoblock</td>
+        <td>220/270</td>
+        <td>440</td>
+        <td></td>
+        <td>Vitreous Enamel</td>
+        <td>58 L/h</td>
+        <td>China</td>
+        <td>China</td>
+        <td>4.6</td>
+        <td></td>
+        <td>5</td>
+        <td>Propane</td>
+        <td>48</td>
+        <td></td>
+        <td></td>
+        <td>3,500</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+  </body>
+</html>

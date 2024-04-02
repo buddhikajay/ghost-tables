@@ -1,0 +1,5 @@
+.reactgrid-wrapper {
+  height: 100px;
+  width: 500px;
+  overflow: scroll;
+}
